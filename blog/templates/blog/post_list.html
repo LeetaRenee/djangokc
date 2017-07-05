@@ -7,13 +7,16 @@
     <body>
 
         <div>
-            <h1>iNDy'S bLoG</h1>
+            <center><h1>iNDy'S bLoG</h1></center>
         </div>
 
         <div>
-            <p>Published: 14.06.2017, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Loro ipsum, life is nice and fireworks are weird.</p>
+            {% for post in posts %}
+                <div>
+                    <p>published: {{ post.published_date }}</p>
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
+            {% endfor %}
         </div>
 
 
